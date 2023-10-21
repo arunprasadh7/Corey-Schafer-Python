@@ -3,12 +3,15 @@
 class Employee:
 
     bonus = 1.04
+    employee_count = 0
 
     def __init__(self,first,last,pay):
         self.first = first
         self.last = last
         self.pay = pay
         self.email = f'{self.first}{self.last}@company.com'.lower()
+
+        Employee.employee_count +=1
 
     def fullname(self):
         return f'{self.first} {self.last}'.title()
@@ -38,3 +41,5 @@ e2.bonus = 2.0
 print(e2.__dict__)
 print(e2.bonus)
 print(e2.pay_raise())
+
+print(Employee.employee_count)
